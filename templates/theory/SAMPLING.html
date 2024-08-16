@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../static/main.css">
+
+</head>
+
+<body>
+    <nav>
+        <div class="light-mode-button">
+            <img src="../static/images/AM_MAIN/icons8-moon-48 (1).png" alt="moon" />
+        </div>
+        <h1 class="theory-title">Sampling</h1>
+        <div class="buttons">
+            <a href="/">
+                <button class="theory-nav-button">
+                    <img src="../static/images/AM_MAIN/icons8-home-50.png" alt="">
+                </button>
+            </a>
+        </div>
+    </nav>
+
+    </nav>
+
+    <section class="theory-body">
+
+
+<h3>Sampling</h3>
+
+<p>Sampling in statistics or research is defined as a method to
+     select a subset from the large data. In digital communication,
+      it is defined as a process of measuring the instantaneous
+     value of an analog signal in the discrete form.</p>
+
+     <p>Sampling is a process performed by a sampler.
+         It is present in almost every type of digital communication 
+         system that helps in converting an analog signal to the digital signal.
+          An analog signal is a continuous time-varying signal, while digital signal 
+          is a signal in the discrete form. The function of a sampler is to measure
+           the samples of the instantaneous 
+        value of the continuous signal and convert it into the discrete values.</p>
+
+        <p>The combination of quantizer and sampler in digital communications
+             works as an A/D (Analog to Digital) converter. It converts an incoming
+              analog signal to the digital signal. The sampler converts the analog signal
+               to the discrete values and the quantizer represent each level to the fixed 
+               discrete finite set of values. Thus, we can define the analog to digital conversion
+                as a two step process. The first step is performed by the sampler and the second 
+            step is performed by the quantizer.</p>
+
+            <p>The waveforms of a continuous analog signal and digital signal are shown below:</p>
+
+            <img src="https://static.javatpoint.com/tutorial/digital-communication/images/sampling.png">
+            <p>When the continuous signal is sampled at regular intervals and multiplied by a periodic pulse train, 
+                the produced signal is the sampled signal, as shown below:</p>
+
+                <img src="https://static.javatpoint.com/tutorial/digital-communication/images/sampling2.png">
+
+                <p>Here, we will discuss the sampling theorem, sampling rate,
+                     Nyquist rate, methods of sampling, anti-aliasing filter,
+                      advantages of sampling, disadvantages
+                     of sampling, and applications of sampling.</p>
+
+                     <h3>Sampling theorem</h3>
+                     <p>Sampling theorem is based on the fixed sampling rate, called Nyquist rate.
+                        Hence, sampling theorem is also known as Nyquist theorem. It is based on the 
+                        theory of the bandlimited signals.
+
+                        Let's discuss the sampling theorem of the bandpass signals and baseband signals.</p>
+
+                        <p>According to the sampling theory of the bandpass signals,
+                             a signal can be successfully reconstructed if its sampling 
+                             rate is not greater than the maximum frequency W. The samples are spaced at sampling time
+                             'Ts' seconds apart without zero mean square error.</p>
+
+                             <h4>Ts = 1/2W</h4>
+
+                             <p>According to the sampling theory of the baseband signals, a signal can be successfully reconstructed if the samples are separated with a uniform intervals less than or equal to 1/2Fm.
+     
+                        </p>
+
+                        <p>It can be represented as:</p>
+
+                        <h4>Ts ≤ 1/2Fm</h4>
+
+                        <h3>Nyquist rate</h3>
+
+                       <p> Suppose H is the highest selected frequency. A bandlimited 
+                        signal is transmitted at the frequency components lower than W Hz.
+                         Thus, for the replication of the original 
+                        signal, the sampling rate should be twice the highest frequency.</p>
+
+                        <p>It is given by:</p>
+
+                        <h4>Fs = 2W</h4>
+                        <p>Where,
+
+                            Fs is the sampling rate
+                            
+                            W is the highest frequency</p>
+
+                            <p>Such rate of sampling is known as Nyquist rate.
+                                 The sampling at the Nyquist rate does not introduce any distortion.
+
+                                Nyquist rate is also known as the minimum sampling rate 
+                                and is represented by the condition:</p>
+
+                                <h4>Fs = 2Fm</h4>
+                                <p>Where,
+
+                                    Fs is the sampling frequency or sampling rate
+                                    
+                                    Fm is the maximum frequency of the input signal or the message signal</p>
+
+                                    <h3>Nyquist Interval</h3>
+
+                                    <p>Nyquist interval is the reciprocal of the Nyquist rate. It is given by:</p>
+                                    <h4>TS = 1/2W</h4>
+
+                                    <p>Where,
+
+                                        TS is the Nyquist Interval
+                                        
+                                        W is the highest frequency</p>
+
+                                        <h3>Methods of sampling</h3>
+                                        <ul>
+                                            <li>Ideal Sampling</li>
+                                            <li>Natural Sampling</li>
+                                            <li>Flat-top sampling</li>
+                                        </ul>
+
+                                        <h4>Ideal Sampling</h4>
+                                        <p>Ideal sampling is also known as instantaneous sampling or 
+                                            impulse sampling. The sampling process multiplies the input signal and the carrier
+                                             signal, which is present in the form of train of pulses.</p>
+
+                                             <img src="https://static.javatpoint.com/tutorial/digital-communication/images/sampling3.png">
+                                             <p>The above diagram shows the waveforms of the message signal,
+                                                 sampling signal in the form of train of pulses, and the sampled signal.
+                                                  The working principle that multiples
+                                                 the input signal and the sampling signal is known as multiplication principle.</p>
+
+                                                 <h4>Natural Sampling</h4>
+                                                 <p>Natural Sampling is considered an efficient multiplexing method
+                                                     in Pulse Amplitude Modulation. Here, the analog
+                                                     signal is multiplied by the uniformly spaced rectangular pulses.</p>
+
+                                                     <img src="https://static.javatpoint.com/tutorial/digital-communication/images/sampling4.png">
+                                                     <p>The above diagram shows the waveforms of the message signal, sampling signal, and the sampled signal.</p>
+
+                                                     <h4>Flat-top sampling</h4>
+                                                     <p>The design and reconstruction of flat-top sampling is
+                                                         easy than the natural sampling process. The pulses in the flat-top 
+                                                         sampling method are in the flat shape at the top and are held at a constant height. 
+                                                        It means that the samples are flat and have constant amplitude.</p>
+
+                                                        <img src="https://static.javatpoint.com/tutorial/digital-communication/images/sampling5.png">
+
+                                                        <h4>Anti-aliasing filter</h4>
+
+                                                        <p>Aliasing is the common effect that can arise post the sampling process.
+                                                             In the aliasing process, the high frequency components in the signal override the low frequency components.
+                                                             The aliasing occurs when the signal frequency exceeds half the sampling frequency (Fs/2).</p>
+
+                                                             <p>It can be represented as:</p>
+                                                             <h4>Fm > Fs/2</h4>
+
+                                                               <h4> 2Fm > Fs</h4>
+                                                                <p>
+                                                                Where,
+                                                                
+                                                                Fs is the sampling frequency or sampling rate
+                                                                
+                                                                Fm is the maximum frequency of the input signal or the message signal</p>
+
+                                                                <p>Similarly, the aliasing effect can be reduced when the sampling frequency exceeds twice the signal's frequency.
+
+                                                                    It is represented as:</p>
+
+                                                                    <h4>Fs > 2Fm</h4>
+
+                                                                    <p>The anti-aliasing filters are used to prevent the aliasing effect 
+                                                                        during the transmission process. The cut-off frequency of such filters is equal 
+                                                                        to half the sampling rate (Fs/2). The function of aliasing filters is to remove
+                                                                         and filter the high-frequency components from the signal. It is inserted before the sampler. 
+                                                                         It is also known as low-pass anti-aliasing filter. The signal after passing through the
+                                                                          anti-aliasing filter is sampled at a rate higher 
+                                                                        than the Nyquist rate. It helps in the easy recovery of the signal.</p>
+
+                                                                        <h3>Advantages of sampling</h3>
+
+                                                                        <p>The major advantages of the sampling process are due to the conversion 
+                                                                            of the transmission to the digital form, which has various advantages as discussed above.
+                                                                             It converts an analog signal to the discrete values.</p>
+
+                                                                             <p>The advantages of sampling are as follows:</p>
+                                                                             <ol>
+                                                                                <li>Low cost</li>
+                                                                                <li>High accuracy</li>
+                                                                                <li>Easy to implement</li>
+                                                                                <li>Less time consuming</li>
+                                                                                <li>Low signal loss</li>
+                                                                                <li>High scope</li>
+
+                                                                             </ol>
+
+                                                                             <p>It prevents the signal loss or any information loss by converting 
+                                                                                the incoming data to the suitable rate for transmission. For example, 
+                                                                                if a signal contains high frequency components, the sampling process will convert it
+                                                                                 into high rates for effective transmission. Generally, the input signal is sampled
+                                                                                  at the frequency rate twice that the incoming signal.
+                                                                                
+  It is done to preserve the full information in the signal.</p>
+
+  <script src="../../static/main.js"></script>
+
+            </body>
+            
+            </html>
+

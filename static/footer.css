@@ -1,0 +1,125 @@
+
+.about-head{
+  color: black;
+  padding: 13px;
+  }
+  .about-content{
+  line-height: 0.7cm;
+  padding: 27px;
+  color: #000000;
+  font-weight:560;
+  text-align: left;
+  }
+  
+  .labell{
+    margin-left: 12px;
+      float: left;
+      font-weight:600;
+  }
+      
+    .write-text{
+      width: 95%;
+      background-color: #ffffff;
+      border: 1px solid #353434; /* Gray border */
+      margin-left: 12px;
+      margin-right: 12px;
+      border-radius: 4px; /* Rounded borders */
+      box-sizing: border-box;
+      
+    }
+   
+    .label00{
+      float: left;
+      margin-left: 12px;
+      font-weight:600;
+      
+    }
+    .text-write{
+      background-color: #ffffff;
+      width: 95%; /* Full width */
+      border: 1px solid #353434; /* Gray border */
+      border-radius: 6px; /* Rounded borders */
+      box-sizing: border-box;
+      padding: 12px; /* Some padding */ 
+      /* Make sure that padding and width stays in place */
+      margin-left: 12px;
+      margin-right: 12px;
+     margin-top: 3px; /* Add a top margin */
+     margin-bottom: 9px; /* Bottom margin */
+     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+   }
+  
+   
+    
+    .sub-btn {
+      background-color: #8C9B53;
+      color: rgb(241, 235, 235);
+      padding: 8px 14px;
+      border: solid;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    
+    /* When moving the mouse over the submit button, add a darker green color */
+    .sub-btn:hover {
+      background-color: #1d1313;
+      color: rgb(206, 199, 199);
+  
+    }
+    .coverr{
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2px;
+      flex-wrap: wrap; 
+      
+    }
+    
+    .about,.feedback{
+      
+      padding: 5px;
+     
+      border: 1px solid #413f3f;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.9);
+      border-radius: 8px;
+      text-align: center;
+      flex: 1;
+      margin: 5px;
+    }
+    
+    /* Add a background color and some padding around the form */
+    .cont{
+      display: flex;
+      flex-direction: column;
+      margin-top: 200px;
+      
+      background-image: url(./images/foot.png);
+      
+      padding: 40px;
+      
+    }
+    .footspace{
+      height: 20vh;
+      background-color: white;
+    }
+    /* Styles for devices with a maximum width of 767px (typically mobile devices) */
+  @media (max-width: 767px) {
+      .coverr{
+          display: block; /* Make sure rows stack */
+      width: 100%;   
+      }
+      .about-head{
+          color: black;
+          padding: 13px;
+          font-size: medium;
+          }
+          .about-content{
+              font-size: small;
+          line-height: 0.7cm;
+          padding: 27px;
+          color: #000000;
+          }
+    }
+    
+    

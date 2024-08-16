@@ -1,0 +1,201 @@
+{
+    "Home":[
+        {
+            "title":"Analog Modulation",
+            "descritption":"The early and simple form of modulation for radio communication. Explore AM modulator, demodulator, transmission examples, modulation trapeze ...",
+            "image_link":"https://i.pinimg.com/originals/8e/74/b4/8e74b48d8aa8cf779f37fc97b5e7bc83.jpg",
+            "color":"white",
+            "hasTheory":"false",
+            "demoLink":"-",
+            "theoryLink":"-",
+            "pageLink":"/AM"
+        },
+        {
+            "title":"Digital Modulation",
+            "descritption":"Digital modulation is the process of encoding a digital information signal into the amplitude, phase, or frequency of the transmitted signal.",
+            "image_link":"https://images.pond5.com/blue-code-wave-background-business-footage-192021572_iconl.jpeg",
+            "color":"white",
+            "hasTheory":"false",
+            "demoLink":"-",
+            "theoryLink":"-",
+            "pageLink":"/DM"
+        },
+        {
+            "title":"Pulse Modulation",
+            "descritption":"Pulse modulation is a type of modulation technique used in communication systems to transmit analog signals over a digital communication channel.The analog signal is sampled at regular intervals and each sample is converted into a series of pulses",
+            "image_link":"https://wiki.analog.com/_media/university/courses/electronics/pwm_ref_voltage-wav.gif",
+            "color":"white",
+            "hasTheory":"false",
+            "demoLink":"-",
+            "theoryLink":"-",
+            "pageLink":"/PM"
+        }
+    ],
+
+    "AM":[
+        {
+            "title":"Amplitude Modulation",
+            "descritption":"The early and simple form of modulation for radio communication. Explore AM modulator, demodulator, transmission examples, modulation trapeze ...",
+            "image_link":"https://electronicspost.com/wp-content/uploads/2015/11/amplitude-modulation1.png",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/AM/MAIN",
+            "theoryLink":"/theory/AM_MAIN",
+            "pageLink":""
+        },
+        {
+            "title":"SSB Modulation",
+            "descritption":"Amplitude modulation made radio broadcasting possible.Single sideband modulation made it possible to improve it, by saving bandwidth. Analyze a SSB-signal in time and frequency domain and change parameters... ",
+            "image_link":"https://electronicspost.com/wp-content/uploads/2015/12/spectrum-of-message-signal-and-product-modulator-output.png",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/AM/SSB",
+            "theoryLink":"/theory/SSBSC",
+            "pageLink":""
+
+        },
+        {
+            "title":"DSBSC Modulation",
+            "descritption":"Double-sideband suppressed-carrier transmission (DSB-SC) is transmission in which frequencies produced by amplitude modulation (AM) are symmetrically spaced above and below the carrier frequency and the carrier level is reduced.",
+            "image_link":"/static/images/DSBSC.png",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/AM/DSBSC",
+            "theoryLink":"/theory/DSBSC",
+            "pageLink":""
+
+        },
+        {
+            "title":"QAM Modulation",
+            "descritption":"QAM (quadrature amplitude modulation) is a method of combining two amplitude modulation (AM) signals into a single channel. This approach helps double its effective bandwidth.",
+            "image_link":"https://i.stack.imgur.com/CFQ9b.jpg",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/AM/QAM",
+            "theoryLink":"/theory/QAM",
+            "pageLink":""
+        },
+        {
+            "title":"Frequency Modulation",
+            "descritption":"Frequency modulation signal spectra show sidebands for sinewave modulation. In this experiment we take a look how they change with the modulating signal amplitude.",
+            "image_link":"https://www.allaboutcircuits.com/uploads/articles/RFT_ch4_pg3_FMm4.jpg",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/FM/1",
+            "theoryLink":"/theory/FREQMOD",
+            "pageLink":""
+        },
+        {
+            "title":"Phase Modulation",
+            "descritption":"Phase modulation (PM) is a modulation pattern for conditioning communication signals for transmission. It encodes a message signal as variations in the instantaneous phase of a carrier wave.",
+            "image_link":"https://www.allaboutcircuits.com/uploads/articles/RFT_ch4_pg4_PMm4.jpg",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/FM/2",
+            "theoryLink":"/theory/PHASEMOD",
+            "pageLink":""
+        }
+    ],
+    "DM":[
+        {
+            "title":"BASK Modulation",
+            "descritption":"BASK Modulator BASK (Binary Amplitude shift keying) is a Modulation that mirrors the digital data as variations in the amplitude of a carrier wave.As per the modulating signal the amplitude of an analog carrier changes",
+            "image_link":"https://schaumont.dyn.wpi.edu/ece4703b21/_images/bpskinterpolate.png",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/DM/BASK",
+            "theoryLink":"/theory/BASK",
+            "pageLink":""
+        },
+        {
+            "title":"BFSK Modulation",
+            "descritption":"Binary FSK is a constant-envelope form of angle modulation similar to conventional frequency modulation except that the modulating signal varies between two discrete voltage levels (i.e., 1's and 0's).",
+            "image_link":"https://eus-www.sway-cdn.com/s/kcfJQ8HIpjTFBth1/images/6TXGLmHe-v25mQ?quality=1280&allowAnimation=true&embeddedHost=true",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/DM/BFSK",
+            "theoryLink":"/theory/BFSK",
+            "pageLink":""
+
+        },
+        {
+            "title":"BPSK Modulation",
+            "descritption":"The early and simple form of modulation for radio communication. Explore AM modulator, demodulator, transmission examples, modulation trapeze ...",
+            "image_link":"https://www.researchgate.net/publication/323559089/figure/fig2/AS:779407505518618@1562836638494/The-PDF-of-received-symbols-with-BPSK-modulation-and-AWGN-channel-the-red-region.gif",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/DM/BPSK",
+            "theoryLink":"/theory/BPSK",
+            "pageLink":""
+        },
+        {
+            "title":"QPSK Modulation",
+            "descritption":"The early and simple form of modulation for radio communication. Explore AM modulator, demodulator, transmission examples, modulation trapeze ...",
+            "image_link":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSLhNGbU1NvxhkpLqEpJGavlD4BOPB9W3YAA&usqp=CAU",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/DM/QPSK",
+            "theoryLink":"/theory/QPSK",
+            "pageLink":""
+        },
+        {
+            "title":"DPSK Modulation",
+            "descritption":"Differential phase shift keying (DPSK) is a common form of phase modulation that conveys data by changing the phase of the carrier wave.",
+            "image_link":"https://www.tutorialspoint.com/digital_communication/images/model_waveform_of_dpsk.jpg",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/DM/DPSK",
+            "theoryLink":"/theory/D-BPSK",
+            "pageLink":""
+        }
+    ],
+    "PM":[
+        {
+            "title":"Sampling",
+            "descritption":"The early and simple form of modulation for radio communication. Explore AM modulator, demodulator, transmission examples, modulation trapeze ...",
+            "image_link":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Signal_Sampling.svg/450px-Signal_Sampling.svg.png",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/PM/SAMPLING",
+            "theoryLink":"/theory/SAMPLING"
+        },
+        {
+            "title":"Quantization",
+            "descritption":"The early and simple form of modulation for radio communication. Explore AM modulator, demodulator, transmission examples, modulation trapeze ...",
+            "image_link":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/3-bit_resolution_analog_comparison.png/330px-3-bit_resolution_analog_comparison.png",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/PM/QUANTIZATION",
+            "theoryLink":"/theory/QUANTIZATION"
+        },
+        {
+            "title":"PAM(Pulse Amplitude Modulation)",
+            "descritption":"The early and simple form of modulation for radio communication. Explore AM modulator, demodulator, transmission examples, modulation trapeze ...",
+            "image_link":"data:image/jpeg;base64,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",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/PM/PAM",
+            "theoryLink":"/theory/PAM"
+        },
+
+        {
+            "title":"PWM(Pulse Width Modulation)",
+            "descritption":"The early and simple form of modulation for radio communication. Explore AM modulator, demodulator, transmission examples, modulation trapeze ...",
+            "image_link":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/PWM%2C_3-level.svg/525px-PWM%2C_3-level.svg.png",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/PM/PWM",
+            "theoryLink":"/theory/PWM"
+        },
+        {
+            "title":"PCM(Pulse Code Modulation)",
+            "descritption":"The early and simple form of modulation for radio communication. Explore AM modulator, demodulator, transmission examples, modulation trapeze ...",
+            "image_link":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Pcm.svg/375px-Pcm.svg.png",
+            "color":"white",
+            "hasTheory":"true",
+            "demoLink":"/PM/PCM",
+            "theoryLink":"/theory/PCM"
+        }
+
+    ]
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSBSC theory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/main.css">
+
+</head>
+
+<body>
+    <nav>
+        <div class="light-mode-button">
+            <img src="../static/images/AM_MAIN/icons8-moon-48 (1).png" alt="moon" />
+        </div>
+        <h1 class="theory-title">SSB Modulation And Demodulation</h1>
+        <div class="buttons">
+            <a href="/">
+                <button class="theory-nav-button">
+                    <img src="../static/images/AM_MAIN/icons8-home-50.png" alt="">
+                </button>
+            </a>
+        </div>
+    </nav>
+    <section class="theory-body">
+        <h3>SSBSC Modulation</h3>
+
+
+        <p>The process of suppressing one of the sidebands along with the carrier and transmitting a single sideband is
+            called as Single Sideband Suppressed Carrier system or simply SSBSC. It is plotted as shown in the figure
+        </p>
+        <p>In figure, the carrier and the lower sideband are suppressed. Hence, the upper sideband is used for
+            transmission. Similarly, we can suppress the carrier and the upper sideband while transmitting the lower
+            sideband.</p>
+        <p>This SSBSC system, which transmits a single sideband has high power, as the power allotted for both the
+            carrier and the other sideband is utilized in transmitting this Single Sideband.</p>
+
+
+        <img src="/static/images/SSBSC/ssb.jpg" alt="" width="270px">
+
+
+
+        <p>Let us consider the same mathematical expressions for modulating and carrier signals as we have considered in
+            the amplitude modulation. i.e Modulating signal</p>
+        <p>m(t) = A<sub><sub>m</sub></sub>cos(2πf<sub><sub>m</sub></sub>t)</p>
+
+
+        <p>The carrier signal can be represented as:</p>
+        <p>c(t) = A<sub><sub>c</sub></sub>cos(2πf<sub><sub>c</sub></sub>t)</p>
+
+        <p>Mathematically, we can represent the equation of SSBSC wave as: </p>
+        <p>s(t) = (A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub>/2) cos[2&pi; (f<sub><sub>c</sub></sub> +
+            f<sub><sub>m</sub></sub>)t] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for upper sideband
+        </p>
+        <p>or</p>
+        <p>s(t) = (A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub>/2) cos[2&pi; (f<sub><sub>c</sub></sub> -
+            f<sub><sub>m</sub></sub>)t] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for lower sideband
+        </p><br>
+
+
+        <h3>SSBSC Demodulation </h3>
+
+
+        <p>The process of extracting an original message signal from SSBSC wave is known as detection or demodulation of
+            SSBSC. Coherent detector is used for demodulating SSBSC wave.</p>
+        <h4>Coherent Detector</h4>
+        <p>Here, the same carrier signal (which is used for generating SSBSC wave) is used to detect the message signal.
+            Hence, this process of detection is called as coherent or synchronous detection. Following is the block
+            diagram of coherent detector.</p>
+
+
+
+        <img src="/static/images/SSBSC/ssbsc1.png" alt="" width="300px">
+
+        <p>In this process, the message signal can be extracted from SSBSC wave by multiplying it with a carrier, having
+            the same frequency and the phase of the carrier used in SSBSC modulation. The resulting signal is then
+            passed through a Low Pass Filter. The output of this filter is the desired message signal.</p>
+
+
+        <p>Consider the following SSBSC wave having a lower sideband.</p>
+        <p>s(t) = (A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub>/2) cos[2&pi; (f<sub><sub>c</sub></sub> -
+            f<sub><sub>m</sub></sub>)t]</p>
+        <p>The output of the local oscillator is </p>
+        <p>c(t) = A<sub><sub>c</sub></sub>cos(2πf<sub><sub>c</sub></sub>t)</p>
+        </p>
+        <p>From the figure, we can write the output of product modulator as</p>
+        <p>v(t) = s(t)c(t)</p>
+        <p>Substitute s (t) and c (t) values in the above equation.</p>
+        <p> v(t) = (A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub>/2)cos[2&pi;(f<sub><sub>c</sub></sub> -
+            f<sub><sub>m</sub></sub>)t] A<sub><sub>c</sub></sub>cos(2&pi;f<sub><sub>c</sub></sub>t)</p>
+        <p>v(t) =
+            (A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub><sup><sup>2</sup></sup>/4)cos(2&pi;f<sub><sub>m</sub></sub>t)
+            +
+            (A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub><sup><sup>2</sup></sup>/4)cos[2&pi;(2f<sub><sub>c</sub></sub>
+            - f<sub><sub>m</sub></sub>)t]</p>
+
+        <p>In the above equation, the first term is the scaled version of the message signal. It can be extracted by
+            passing the above signal through a low pass filter.
+            Therefore, the output of low pass filter is: </p>
+        <p> v<sub><sub>o</sub></sub>(t) = (A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub><sup><sup>2</sup></sup>/4)
+            cos(2&pi;f<sub><sub>m</sub></sub>t) </p>
+        <p>Here the scaling factor is <span>A<sub><sub>c</sub></sub><sup><sup>2</sup></sup>/4.</span></p>
+        </p>
+        <p>We can use the same block diagram for demodulating SSBSC wave having an upper sideband. Consider the
+            following SSBSC wave having an upper sideband.
+        </p><p>s(t) = (A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub>/2) cos[2&pi; (f<sub><sub>c</sub></sub> +
+                f<sub><sub>m</sub></sub>)t]</span>
+        </p>
+        <p>The output of the local oscilattor is </p>
+        <p>c(t) = A<sub><sub>c</sub></sub>cos(2&pi;f<sub><sub>c</sub></sub>t)</p><br>
+        <p>We can write the output of the product modulator as</p>
+        <p>v(t) = s(t)c(t) </p>
+        <p> Substitute s (t) and c (t) values in the above equation.</p>
+        <p>(A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub>/2) cos[2&pi; (f<sub><sub>c</sub></sub> +
+            f<sub><sub>m</sub></sub>)t] A<sub><sub>c</sub></sub>cos(2&pi;f<sub><sub>c</sub></sub>t)</p>
+        <p>v(t) =
+            (A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub><sup><sup>2</sup></sup>/4)cos(2&pi;f<sub><sub>m</sub></sub>t)
+            +
+            (A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub><sup><sup>2</sup></sup>/4)cos[2&pi;(2f<sub><sub>c</sub></sub>
+            + f<sub><sub>m</sub></sub>)t]</p>
+        <p>Therefore, the output of low pass filter is:
+        <p>
+        <p> v<sub><sub>o</sub></sub>(t) = (A<sub><sub>m</sub></sub>A<sub><sub>c</sub></sub><sup><sup>2</sup></sup>/4)
+            cos(2&pi;f<sub><sub>m</sub></sub>t) </p><br>
+        <p>Here too the scaling factor is <span>A<sub><sub>c</sub></sub><sup><sup>2</sup></sup>/4.</span></p>
+        <p>Therefore, we get the same demodulated output in both the cases by using coherent detector.</p>
+
+
+    </section>
+    <script src="../../static/main.js"></script>
+</body>
+
+</html>

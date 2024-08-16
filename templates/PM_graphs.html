@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+  {% include 'head.html' %}
+  <body class="graph-body">
+    {% with title= title %}
+      {% include 'nav.html' %}
+    {%endwith%}
+  <div class="container-full" id="graph-back">
+
+    <div class="container-full" id="graph-back">
+      {% if pmtype != "QUANTIZATION" %}
+      <div class="notes">
+        <h4>Warnings</h4>
+        <ol>
+          {% if pmtype == "PCM" %}
+          <li>The number of bits represents the number of bits of the encoded signal that you can see.</li>
+          {% else %}
+          <li>Keep the pulse frequency according to the message frequency. Higher pulse frequency for higher message frequencies.</li>
+          {% endif %}
+        </ol>
+      </div>
+      {% endif %}
+
+    <form id="modulation-form" onsubmit="handleSubmit('{{pmtype}}')" method="POST">
+      <div class="inputs">
+
+        <div class="input-wrapper">
+          <label for="signal_type" class="form-label">Message type</label>
+          <select name="message_signal" class="input-bar">
+            <option value="sin">Sin</option>
+            <option value="cos" selected>Cos</option>
+            {% if pmtype != "QUANTIZATION" %}
+            <option value="tri">Triangle</option>
+            {% endif %}
+          </select>
+        </div>
+        <div class="input-wrapper">
+          <label for="freqc">Message Frequency</label>
+          <input type="number" id="freqc" name="fm" min="1000" max="50000" class="input-bar" placeholder="in HZ" required>
+        </div>
+
+        <div class="input-wrapper">
+          <label for="freqc">Message Amplitude</label>
+          <input type="number" id="freqc" name="am" class="input-bar" required>
+        </div>
+
+        {%if pmtype == "PPM"%}
+
+        <div class="input-wrapper">
+          <label for="ppm_ratio">ppm_ratio</label>
+          <input type="number" id="ppm_ratio" name="ppm_ratio" class="input-bar" step="0.01" required>
+        </div>
+
+        {% endif %}
+
+        {% if pmtype != "QUANTIZATION" and pmtype != "PCM"%}
+        <div class="input-wrapper">
+          <label for="Signal Frequency">Pulse Frequency</label>
+          <input type="number" id="Signal Frequency" name="fs" min="500" class="input-bar" placeholder="in HZ" required>
+        </div>
+
+        {% elif pmtype == "QUANTIZATION"%}
+        <div class="input-wrapper">
+          <label for="Quantization Levels">Quantization Levels</label>
+          <input type="number" id="Quantization Levels" name="ql" min="2" class="input-bar" required>
+        </div>
+        {% elif pmtype == "PCM"%}
+        <div class="input-wrapper">
+          <label for="Quantization Levels">Quantization Levels</label>
+          <input type="number" id="Quantization Levels" name="ql" class="input-bar" required>
+        </div>
+        <div class="input-wrapper">
+          <label for="Number Of Bits">Number Of Bits</label>
+          <input type="number" id="Number Of Bits" name="nb" max="2000" class="input-bar" required>
+        </div>
+        {% endif %}
+
+        <br>
+      </div>
+
+      <div class="buttons">
+        <button id="submit-button">Show Results</button>
+        <button id="downloadGroup">Download</button>
+      </div>
+    </form>
+
+  </div>
+
+
+  <div class="plot-wrapper">
+    {% if inputs|length%}
+    <div class="input-display-section">
+      {%for key, value in inputs.items()%}
+      <article class="selected-value">
+        <span>{{key}}</span>:
+        <span>{{value}}
+          {%if key=="Am" or key=="Ac"%}
+          Volts
+          {%elif key=="fm" or key=="fc" %}
+          Hz
+          {%endif%}
+        </span>
+      </article>
+      {%endfor%}
+    </div>
+    {%endif%}
+    {% if plots|length == 0%}
+    {% set photoLinks = [] %}
+    <p class="info">Please select the values to generate the graph</p>
+    {% else %}
+
+    {% set photoLinks = [] %}
+    {% for plot in plots %}
+    {% set photoData = plot|decode_hex|b64encode %}
+    {% set photoLink = 'data:image/png;base64,' ~ photoData %}
+    {% if photoLinks.append(photoLink) %}{% endif %}
+    <img src="{{ photoLink }}" class="graph-plot" />
+     {% endfor %}
+    {%if pmtype == "PCM"%}
+    <div style="display: flex;justify-content: center;padding: 16px">
+      <textarea readonly rows="10" cols="50"
+        style="width:100%;padding: 16px;overflow-x:hidden;background-color:#000000;color:white">{{ encoded }}</textarea>
+    </div>
+    {% endif %}
+    {% endif %}
+ 
+
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+  <script>
+
+document.getElementById('downloadGroup').addEventListener('click', function () {
+        // Create a new ZIP file
+        var zip = new JSZip();
+          var photoLinks = {{ photoLinks|tojson|safe }};
+          console.log(photoLinks);
+
+          if(photoLinks.length == 0){
+            alert('Generate modulation to downalod');
+          }
+          else{
+ // Iterate through photoLinks and add each photo to the ZIP file
+ for (var index = 0; index < photoLinks.length; index++) {
+            var photoLink = photoLinks[index];
+            var imgData = photoLink.split(',')[1];
+            zip.file("photo" + (index + 1) + ".png", imgData, { base64: true });
+        }
+  
+        // Generate the ZIP file and trigger the download
+        zip.generateAsync({ type: "blob" }).then(function (blob) {
+            var link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "photos.zip"; // Specify the filename for the downloaded ZIP file
+            link.click();
+        });
+          }
+       
+    });
+
+    const form = document.getElementById('modulation-form');
+    const typeOfMod = '{{pmtype}}';
+  
+  function handleSubmit(mtype){
+      event.preventDefault();
+      
+      const inputValues = {};
+      const allInputs = {};
+      // console.log(mtype)
+     
+      const inputElements = form.querySelectorAll('input');
+      
+      inputElements.forEach(function(inputElement) {
+        inputValues[inputElement.name] = inputElement.value;
+      });
+  
+      allInputs[mtype] = inputValues;
+      // console.log(allInputs);
+      
+      // Store input values in local storage
+      // localStorage.setItem('inputValues', JSON.stringify(inputValues));
+      localStorage.setItem('allInputs', JSON.stringify(allInputs));
+        
+  
+      // Submit the form
+      form.submit();
+  }
+    // Check if local storage contains saved input values
+    if (localStorage.getItem('allInputs')) {
+      const savedValues = JSON.parse(localStorage.getItem('allInputs'));
+      // console.log(typeOfMod);
+      // console.log(savedValues[typeOfMod]);
+      
+      const valuesRequired = savedValues[typeOfMod]
+      // Pre-fill the form fields with saved values
+      for (const value in valuesRequired) {
+        if (valuesRequired.hasOwnProperty(value)) {
+          const inputElement = form.querySelector(`[name="${value}"]`);
+          if (inputElement) {
+            inputElement.value = valuesRequired[value];
+          }
+        }
+      }
+     }
+  
+  </script>
+</body>
+
+</html>

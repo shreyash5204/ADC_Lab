@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/main.css">
+    <title>DSM theory</title>
+   
+</head>
+<body>
+    <nav>
+        <div class="light-mode-button">
+            <img src="../static/images/AM_MAIN/icons8-moon-48 (1).png" alt="moon" />
+        </div>
+        <h1 class="theory-title">QAM Modulation</h1>
+        <div class="buttons">
+            <a href="/">
+                <button class="theory-nav-button">
+                    <img src="../static/images/AM_MAIN/icons8-home-50.png" alt="">
+                </button>
+            </a>
+        </div>
+    </nav>
+
+    
+    <section class="theory-body">
+
+                <h3>QAM</h3>
+                <p>	SSB-SC signals are difficult to generate  accurately, quadrature amplitude  modulation(QAM) offers an attractive  alternative to SSB-SC. QAM can be exactly generated without  requiring sharp-cutoff bandpass filters.</p>
+                <p>QAM operates by transmitting two DSB  signals using carriers of the same frequency  but in phase quadrature, as shown in Fig. This scheme is known as quadrature  amplitude modulation (QAM) or quadrature  multiplexing.</p>
+                <img src="/static/images/QAM/QAM_block.png" alt="" width="570px">  
+                <p>As shown Fig, the boxes labeled -π/2 are  phase shifters that delay the phase of an  input sinusoid by -π/2 rad. </p>
+                <p>m<sub><sub>1</sub></sub>(t), m<sub><sub>2</sub></sub>(t),are two baseband message signals</p>
+                <p> φ<sub><sub>QAM</sub></sub>(t) is the  the sum  of the two DSB-modulated signals, is
+                </p>
+                <p>φ<sub><sub>QAM</sub></sub>(t) = m<sub><sub>1</sub></sub>(t)cos(2π(f<sub><sub>c</sub></sub>)t) + m<sub><sub>2</sub></sub>(t)sin(2π(f<sub><sub>c</sub></sub>)t)</p>
+                <p>This can be shown by considering the multiplier output x1 (t) of the upper arm of the receiver :</p>
+                <img src="/static/images/QAM/QAM_4.png" alt="" height="350px" ,width="200px"> 
+                <p>x<sub><sub>1</sub></sub>(t)=2φ<sub><sub>QAM</sub></sub>(t)cos(2π(f<sub><sub>c</sub></sub>)t) = 2(m<sub><sub>1</sub></sub>(t)cos(2π(f<sub><sub>c</sub></sub>)t) + m<sub><sub>2</sub></sub>(t)sin(2π(f<sub><sub>c</sub></sub>)t))cos(2π(f<sub><sub>c</sub></sub>)t)</p>
+                <p>x<sub><sub>1</sub></sub>(t) = m<sub><sub>1</sub></sub>(t) + m<sub><sub>1</sub></sub>(t)cos(4π(f<sub><sub>c</sub></sub>)t) + m<sub><sub>2</sub></sub>(t)sin(4π(f<sub><sub>c</sub></sub>)t)</p>
+                <p>The last two terms are band pass signals centered around 2ωc, In fact, they  actually form a QAM signal with 2ωc as the carrier frequency</p>
+                <p>They are suppressed by the low-pass filter, yielding the desired demodulation  output m1 (t). Similarly, the output of the lower receiver branch can be shown  to be m2 (t) </p>
+                <p>x<sub><sub>2</sub></sub>(t)=2φ<sub><sub>QAM</sub></sub>(t)sin(2π(f<sub><sub>c</sub></sub>)t) = 2(m<sub><sub>1</sub></sub>(t)cos(2π(f<sub><sub>c</sub></sub>)t) + m<sub><sub>2</sub></sub>(t)sin(2π(f<sub><sub>c</sub></sub>)t))sin(2π(f<sub><sub>c</sub></sub>)t)</p>
+                <p>x<sub><sub>2</sub></sub>(t) = m<sub><sub>2</sub></sub>(t) - m<sub><sub>2</sub></sub>(t)cos(4π(f<sub><sub>c</sub></sub>)t) + m<sub><sub>1</sub></sub>(t)sin(4π(f<sub><sub>c</sub></sub>)t)</p>
+                <p>Thus, two baseband signals, each of bandwidth B Hz, can be transmitted  simultaneously over a bandwidth 2B by using DSB transmission and  quadrature multiplexing. The upper channel is also known as the in-phase (I) channel and the lower  channel is the quadrature (Q) channel.</p>
+                <p><strong>QAM demodulation must be totally synchronous. An error in the phase or the frequency of the carrier at the demodulator  in QAM will result in loss and interference between the two channels.
+                </strong></p>
+                <p>To show this, let the carrier at the demodulator be 2 cos (ωct + θ).</p>
+               
+                <p>x<sub><sub>1</sub></sub>(t)=2φ<sub><sub>QAM</sub></sub>(t)cos(2π(f<sub><sub>c</sub></sub> + θ)t) = 2(m<sub><sub>1</sub></sub>(t)cos(2π(f<sub><sub>c</sub></sub>)t) + m<sub><sub>2</sub></sub>(t)sin(2π(f<sub><sub>c</sub></sub>)t))cos(2π(f<sub><sub>c</sub></sub>)t + θ)</p>
+                <p>x<sub><sub>1</sub></sub>(t) = m<sub><sub>1</sub></sub>(t)cos(θ) - m<sub><sub>2</sub></sub>(t)sin(θ)+ m<sub><sub>1</sub></sub>(t)cos(4π(f<sub><sub>c</sub></sub>)t + θ) + m<sub><sub>2</sub></sub>(t)sin(4π(f<sub><sub>c</sub></sub>)t + θ)</p>
+                <p>Low-pass filter suppresses the two signals modulated by carrier of angular frequency 2ωc, resulting in the first demodulator output </p>
+                <p>m<sub><sub>1</sub></sub>(t)cos(θ) - m<sub><sub>2</sub></sub>(t)sin(θ)</p>
+                <p>Thus, in addition to the desired signal m1 (t), we also receive signal m2 (t) in the upper receiver branch. This so-called cochannel interference is undesirable.</p>
+                <p>In addition, unequal attenuation of the USB and the LSB during transmission leads to cross talk or cochannel interference.
+                </p>
+                <p>In terms of bandwidth requirement, SSB is similar to QAM but less challenging in terms of the carrier frequency and phase  or the requirement of a distortionless transmission medium. However, SSB is difficult to generate if the baseband signal  m(t) has significant spectral content near the dc.
+                </p>
+                <p>QAM can be used for both analog or digital signal.</p>
+                <h4>Analog QAM:</h4>
+                <p>Analog QAM uses two carriers 90 degrees out of phase with each other. Each carrier is modulated by an analog signal, and  the resulting    modulated waves are combined.
+                </p>
+                <h4>Digital QAM</h4>
+                <p> In digital QAM, the number of modulation states determines how the digital signal is split up. For example,   in 8QAM,     each three bits of       input alters the phase and amplitude of the carrier to derive eight unique modulation        states.
+                </p>
+                <p>With using both amplitude and phase shift keying together it is used to transmit many bits together.
+                </p>
+                <p>Amplitude modulation: distinguishes 0 and 1 by changing the carrier amplitude.</p>
+                <p>Phase modulation: distinguishes 0 and 1 by changing the carrier phase. </p>
+                <p>For example, binary phase shift keying (BPSK) uses phases 0° and 180° for transmitting a single bit (0 or 1) of information. In contrast, QPSK can encode 2 bits per symbol (00, 01, 10, or 11) through the following four phases: 0°, 90°, 180°, and 270°. 
+                    In fact, QPSK is a special type of QAM, that is, 4-QAM. QAM can modulate more symbols, and each symbol has its own phase and amplitude.
+                    </p>
+                <p>PSK is limited by the equipment's ability to distinguish the small phase difference. This factor is responsible for determining its potential bit rate.
+                </p>
+                <p><strong>Quadrature amplitude modulation can be defined as a consolidation of ASK and PSK so that a maximum difference between each signal unit (bit, dibit, tribit, and so on) is accomplished.
+                </strong></p>
+                <img  src="/static/images/QAM/QAM 2.png" alt=""> 
+                <p>N QAM, there are several possible variations. Suppose any measurable number of amplitude changes can be mixed with any measurable number of phase modifies. The figure shows 2 possible configurations, 4-QAM and 8-QAM.
+                </p>
+                <p>In both methods, the number of amplitude switch is less than the number of phase switch Due to amplitude changes are affected by noise and require greater shift differences than phase changes, the number of phase shifts used by a QAM system is continually larger than amplitude shifts. 
+                </p>
+                <p>he other geometric relationships are also applicable. The diagram shows three popular 16-QAM configurations.
+                </p>
+                <p>In the first case, 3 amplitudes and 12 phases treat noise-free best because of a greater phase shift ratio to amplitude.
+                    The second case, with four amplitudes and eight phases. It can be observed that not every intersection of phase and amplitude is used. 4 times, 8 should enable 32 possible variations. Therefore, using only one-half of those possibilities, 
+                    the measurable differences between shifts are raised, and higher signal readability is secured further.</p>
+                <p>Bandwidth for QAM:
+                </p>
+                <p>The minimum bandwidth requirement for QAM transmission is similar to that needed to ASK and PSK transmission.</p>
+                <img src="/static/images/QAM/QAM 3.png" alt="" width="570px"> 
+
+                
+            </section>
+    <script src="../../static/main.js"></script>
+</body>
+</html>

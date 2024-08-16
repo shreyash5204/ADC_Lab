@@ -1,0 +1,6 @@
+/static/results/*.png
+/__pycache__/*
+cython_debug/
+__pycache__/
+.env
+env

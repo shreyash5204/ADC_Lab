@@ -1,0 +1,73 @@
+
+
+
+
+<nav class="navbar mobile-menu-icon">
+        
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        <h1 class="mobile-heading">Adc Simulator</h1>
+    </div>
+    <div class="menu-container">
+    <div class="mobile-menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+     
+    <ul class="nav-links">
+      {%if path!="/" %}
+      <li><a href="/">Home</a></li>
+    {%endif%}
+        
+        <li class="dropdown">
+            <a href="/AM">Analog Modulation</a>
+            <div class="dropdown-content">
+                <a href="/AM/MAIN">AM</a>
+                <a href="/AM/SSB">SSB</a>
+                <a href="/AM/DSBSC">DSBSC</a>
+                <a href="/AM/QAM">QAM</a>
+                <a href="/FM/1">FM</a>
+                <a href="/FM/2">PM</a>
+                
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="/DM">Digital Modulation</a>
+            <div class="dropdown-content">
+                <a href="/DM/BASK">BASK</a>
+                <a href="/DM/BFSK">BFSK</a>
+                <a href="/DM/BPSK">BPSK</a>
+                <a href="/DM/QPSK">QPSK</a>
+                <!-- <a href="/DM2/GMSK">GMSK</a> -->
+                <a href="/DM/DPSK">DPSK</a>
+            </div>
+        </li>
+        
+        <li class="dropdown">
+            <a href="/PM">Pulse Modulation</a>
+            <div class="dropdown-content">
+                <a href="/PM/SAMPLING">SAMPLING</a>
+                <a href="/PM/QUANTIZATION">QUANTIZATION</a>
+                <a href="/PM/PAM">PAM</a>
+                <!-- <a href="/PM/PPM">PPM</a> -->
+                <a href="/PM/PCM">PCM</a>
+                <a href="/PM/PWM">PWM</a>
+            </div>
+        </li>
+        <!-- <li><a href="#">About</a></li> -->
+        <li><a href="/references">References</a></li>
+       
+        
+    </ul>
+  </div>
+  </nav>
+  
+  <script>
+      const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+      const navLinks = document.querySelector('.nav-links');
+  
+      mobileMenuIcon.addEventListener('click', function() {
+          navLinks.classList.toggle('show-nav');
+      });
+  </script>

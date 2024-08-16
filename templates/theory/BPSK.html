@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/main.css">
+    <title>BPSK</title>
+
+    
+</head>
+
+<body>
+    <nav>
+        <div class="light-mode-button">
+            <img src="../static/images/AM_MAIN/icons8-moon-48 (1).png" alt="moon" />
+        </div>
+        <h1 class="theory-title">BPSK Modulation</h1>
+        <div class="buttons">
+            <a href="/">
+                <button class="theory-nav-button">
+                    <img src="../static/images/AM_MAIN/icons8-home-50.png" alt="">
+                </button>
+            </a>
+        </div>
+    </nav>
+
+    <section class="theory-body">
+            <p>Binary phase-shift keying (BPSK), in which the carrier amplitude and carrier frequency
+                are both maintained constant, while the carrier phase is keyed between the two
+                possible values (e.g., 0° and 180°) used to represent symbols 0 and 1.
+            </p>    
+
+
+
+                <p>In binary phase-shift keying (BPSK), the pair of signals is used to represent
+                    symbols 1 and 0, respectively, are defined by </p>
+                    <span>b(t) = &nbsp;&nbsp;</span>
+                    <span>      
+                        <p>&radic;2*E<sub><sub>b</sub></sub>/&radic;T<sub><sub>b</sub></sub>cos(2&pi;f<sub><sub>c</sub></sub>t)&nbsp;&nbsp;<span class="non-code">for symbol 1 corresponding to i = 1</span>
+                        <br/>
+                        <span>{</span>
+                        &radic;2*E<sub><sub>b</sub></sub>/&radic;T<sub><sub>b</sub></sub>cos(2&pi;f<sub><sub>c</sub></sub>t)-&radic;2*E<sub><sub>b</sub></sub>/&radic;T<sub><sub>b</sub></sub>cos(2&pi;f<sub><sub>c</sub></sub>t)&nbsp;&nbsp;<span class="non-code">for symbol 0 corresponding to i = 2</span>
+                        </p>
+                    </span>
+                </span>
+                <p>T<sub><sub>b</sub></sub> denoting the bit duration and E<sub><sub>b</sub></sub> denoting the transmitted signal energy per bit. </p>
+            
+            </span>
+
+            <img src="/static/images/BPSK/bpsk.png">
+
+            <span>
+                <p>
+                    A pair of sinusoidal waves, S<sub><sub>1</sub></sub>(t) and s<sub><sub>2</sub></sub>(t) and which differ only in a relative
+                    phase-shift of &pi; radians as defined in Equation, are referred to as antipodal
+                    signals. 
+                </p>
+                <p>                            
+                    From the two lines of this equation, we see that BPSK is in actual fact a
+                    special case of double-sideband suppressed-carried (DSB-SC) modulation.
+                </p>
+            </span>
+            <br><br>
+            <h2 align="center">GENERATION AND COHERENT DETECTION OF BPSK SIGNALS</h2>
+       
+            <img src="/static/images/BPSK/6.png" alt="">
+       
+        <span>
+            <h3>Generation</h3>
+            <p>
+                BPSK signal is a special case of DSB-
+                SC modulation. Specifically, we use a product
+                modulator consisting of two components (see
+                Fig):
+            </p>
+            <p>
+                1. Non-return-to-zero level encoder, whereby the
+                input binary data sequence is encoded in polar
+                form with symbols 1 and 0 represented by the
+                constant-amplitude levels: &radic;E<sub><sub>b</sub></sub> 
+                and  -&radic;E<sub><sub>b</sub></sub>, respectively. <br>
+            </p>
+            <p>   
+                2. Product modulator, which multiplies the
+                level-encoded binary wave by the sinusoidal
+                carrier c(t)of amplitude  &radic;2/T<sub><sub>b</sub></sub> to produce the
+                BPSK signal
+            </p>
+        </span>
+         
+    
+            <h3>Detection</h3>
+            <ol>
+                <li>To detect the original binary sequence of 1s and 0s,
+                    the BPSK signal at the channel output is applied
+                    to a receiver that consists of four sections 
+                </li>
+                <li>
+                    Product modulator, which is also supplied with a
+                    locally generated reference signal that is a replica of
+                    the carrier wave c(t). 
+                </li>
+                <li>
+                    Low-pass filter, designed to remove the double-
+                    frequency components of the product modulator
+                    output i.e., the components centered on 2f<sub>c</sub> and
+                    pass the zero-frequency components.
+                </li>
+                <li>
+                    Sampler, which uniformly samples the output of the low-pass filter at t=iT<sub>b</sub> where i=0,±1; ±2....; the
+                    local clock governing the operation of the sampler is synchronized with the clock responsible for bit-timing in the
+                    transmitter.
+                </li>
+                <li>
+                    Decision-making device, which compares the sampled value of the low-pass filter's output to an
+                    externally supplied threshold. If the threshold is exceeded, the device decides in favor of symbol 1; otherwise, it decides in
+                    favor of symbol 0. 
+                </li>
+            </ol>
+            
+        </span>
+  
+                    <p>
+                    The BPSK receiver described in Fig. is said to be coherent in the sense that the sinusoidal reference signal
+                    applied to the product modulator in the demodulator is synchronous in phase (and, of course, frequency) with the
+                    carrier wave used in the modulator.This requirement can be achieved by using a phase-locked loop.</p>
+
+                <img src="/static/images/BPSK/bpsk signal.jpg" alt=""  width="280px">
+    
+
+      <h3>Graph of BPSK</h3>
+        <h4>Binary data stream:</h4>
+        <p>A binary data stream is a sequence of digital bits (0s and 1s) that represents information in a digital form. This information could be anything from text, audio, images, or any other digital content. In the context of digital communication systems, a binary data stream is typically used as the input signal to be transmitted over a communication channel.</p>
+        <h4>
+            Carrier wave:
+        </h4>
+        <p>A carrier wave is a high-frequency sinusoidal waveform that is used to transmit the binary data stream over a communication channel. The carrier wave has a fixed frequency and amplitude, and its sole purpose is to modulate the binary data stream. The carrier wave is typically generated by an oscillator or a waveform generator, and its frequency is chosen to be higher than the highest frequency of the binary data stream to be transmitted.</p>
+        <h4>Phase-shift keying:</h4>
+        <p>Phase-shift keying (PSK) is a digital modulation technique that uses the phase of the carrier wave to transmit digital data. In PSK, the phase of the carrier wave is varied to represent the binary data stream. For example, a binary 0 could be represented by a carrier wave with a phase of 0 degrees, while a binary 1 could be represented by a carrier wave with a phase of 180 degrees.</p>
+        <p>To transmit a binary data stream using PSK, the binary data stream is first encoded into a series of digital bits, which are then used to modulate the phase of the carrier wave. At the receiver end, the modulated carrier wave is demodulated to recover the original binary data stream. PSK is a more efficient modulation technique compared to ASK since it requires less bandwidth to transmit the same amount of data. However, it is more complex to implement and is also susceptible to noise and interference.</p>
+        <h3>Spectral Analysis of BPSK</h3>
+        <img src="/static/images/BPSK/BPSKPowerSpec.png">
+            <ol>
+                <li>BASK and BPSK signals occupy the same transmission bandwidth namely, 2/Tb which defines the width of the main lobe of the sinc-shaped power spectra.</li>
+                <li>The BASK spectrum includes a carrier component, whereas this component is absent from the BPSK spectrum. With this observation we are merely restating the fact that BASK is an example of amplitude modulation, whereas BPSK is an example of DSB-SC.</li>
+                <li>The presence of carrier in the BASK spectrum means that  binary data stream can be recovered by envelope detection of BASK signal.</li>
+                <li>Suppression of the carrier in  BPSK spectrum mandates use of coherent detection for recovery of binary data stream from the BPSK signal.</li>
+            </ol>
+    </section>
+
+    <script src="../../static/main.js"></script>
+    
+</body>
+
+</html>

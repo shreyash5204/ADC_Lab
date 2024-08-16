@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency modulation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/main.css">
+    
+</head>
+<body>
+
+
+        <nav>
+            <div class="light-mode-button">
+                <img src="../static/images/AM_MAIN/icons8-moon-48 (1).png" alt="moon" />
+            </div>
+            <h1 class="theory-title">Frequency Modulation</h1>
+            <div class="buttons">
+                <a href="/">
+                    <button class="theory-nav-button">
+                        <img src="../static/images/AM_MAIN/icons8-home-50.png" alt="">
+                    </button>
+                </a>
+            </div>
+    </nav>
+
+
+    <section class="theory-body">
+        <h3>Frequency Modulation</h3>
+        <p>Frequency Modulation is the process of varying the frequency of the carrier signal linearly with the message signal.</p>
+        <p>In amplitude modulation, the amplitude of the carrier signal varies. Whereas, in Frequency Modulation (FM), the frequency of the carrier signal varies in accordance with the instantaneous amplitude of the modulating signal.</p>
+             
+       
+        <h3>Derivation</h3>
+        <img src="/static/images/FREQMOD/FM_1.png" alt="freq mod">
+        <p>
+            The equation for instantaneous frequency f<sub><sub>i</sub></sub> in FM modulation is:
+        </p>
+        <p>
+            f<sub><sub>i</sub></sub> = f<sub><sub>c</sub></sub> + k<sub><sub>f</sub></sub> m(t)</code>
+        </p>
+ 
+        <p>Where, fc is the carrier frequency, k<sub><sub>f</sub></sub>  is the frequency sensitivity m(t) is the message signal.</p>
+        <p>We know the relationship between angular frequency &omega;<sub><sub>i</sub></sub> and angle &theta;<sub><sub>i</sub></sub>(t) as</p>
+        <p>&omega;<sub><sub>i</sub></sub> = d&theta;<sub><sub>i</sub></sub>(t)/dt</p>
+  
+ 
+        <p>2&pi;f<sub><sub>i</sub></sub> = d&theta;<sub><sub>i</sub></sub>(t)/dt </p>
+        <p>&theta;<sub><sub>i</sub></sub>(t) = 2&pi; &Integral;f<sub><sub>i</sub></sub>dt </p>
+  
+   
+        <p>Substitute, f<sub><sub>i</sub></sub> value in the above equation.</p>
+        <p>&theta;<sub><sub>i</sub></sub>(t) = 2&pi; &Integral;( f<sub><sub>c</sub></sub> + k<sub><sub>f</sub></sub> m(t) )dt</p>
+   
+        <p>Substitute, &theta;<sub><sub>i</sub></sub>(t) value in the standard equation of angle modulated wave.</p>
+        <p>
+            s(t) = A<sub><sub>c</sub></sub>cos( 2&pi;f<sub><sub>c</sub></sub>t + 2&pi;k<sub><sub>f</sub></sub> &Integral;m(t)dt )
+        </p>
+
+        <p>
+            This is the equation of FM wave.If the modulating signal is m(t) = A<sub><sub>m</sub></sub> cos(2&pi;f<sub><sub>m</sub></sub>t) , then the equation of FM wave will be:
+        </p>
+        <p>
+            s(t) = A<sub><sub>c</sub></sub>cos( 2&pi;f<sub><sub>c</sub></sub>t + &beta;sin(2&pi;f<sub><sub>m</sub></sub>t ))
+        </p>
+        <p>
+            where  &beta; = modulation index = &Delta;f/f<sub><sub>m</sub></sub> = k<sub><sub>f</sub></sub>A<sub><sub>m</sub></sub>/f<sub><sub>m</sub></sub></span>
+        </p>
+   
+ 
+        <p>
+            The difference between FM modulated frequency (instantaneous frequency) and normal carrier frequency is termed as 
+            Frequency Deviation It is denoted by &Delta;f =  k<span class="subscript">f</span>A<span class="subscript">m</span>
+        </p>    
+     <h3>Demodulation</h3>
+     <p>We know that the equation of FM wave is</p>
+     <p>
+        s(t) = A<sub><sub>c</sub></sub>cos( 2&pi;f<sub><sub>c</sub></sub>t + 2&pi;k<sub><sub>f</sub></sub> &Integral;m(t)dt )
+    </p>
+    <p>Differentiate the above equation with respect to 't'. </p>
+    <p>ds(t)/dt =-A<sub><sub>c</sub></sub>(2&pi;f<sub><sub>c</sub></sub> + 2&pi;k<sub><sub>f</sub></sub>m(t))sin( 2&pi;f<sub><sub>c</sub></sub>t + 2&pi;k<sub><sub>f</sub></sub> &Integral;m(t)dt ) </p>
+    <p>We can write:</p>
+    <p>-sin(θ) = sin(θ - 180<sup><sup>0</sup></sup>)</p>
+    <p>ds(t)/dt =A<sub><sub>c</sub></sub>(2&pi;f<sub><sub>c</sub></sub> + 2&pi;k<sub><sub>f</sub></sub>m(t))sin( 2&pi;f<sub><sub>c</sub></sub>t + 2&pi;k<sub><sub>f</sub></sub> &Integral;m(t)dt - 180<sup><sup>0</sup></sup>) </p>
+    <p>ds(t)/dt =A<sub><sub>c</sub></sub>(2&pi;f<sub><sub>c</sub></sub>)(1 + k<sub><sub>f</sub></sub>m(t)/k<sub><sub>c</sub></sub>)sin( 2&pi;f<sub><sub>c</sub></sub>t + 2&pi;k<sub><sub>f</sub></sub> &Integral;m(t)dt - 180<sup><sup>0</sup></sup>) </p>
+    <p>In the above equation, the amplitude term resembles the envelope of AM wave and the angle term resembles the angle of FM wave. Here, our requirement is the modulating signal m(t)
+        . Hence, we can recover it from the envelope of AM wave.</p>
+        <p>The following figure shows the block diagram of FM demodulator using frequency discrimination method.</p>
+    <img src="/static/images/FREQMOD/FM_2.png" alt="freq mod">
+    <p>This block diagram consists of the differentiator and the envelope detector. Differentiator is used to convert the FM wave into a combination of AM wave and FM wave. This means, it converts the frequency variations of FM wave into the corresponding voltage (amplitude) variations of AM wave. We know the operation of the envelope detector. It produces the demodulated output of AM wave, which is nothing but the modulating signal.</p>
+
+    <h3>Narrowband FM</h3>
+    <p>
+        Following are the features of Narrowband FM.
+        <ol>
+            <li>This frequency modulation has a small bandwidth when compared to wideban.</li>
+            <li>The modulation index &beta; is small, i.e., less than 1.</li>
+            <li>Its spectrum consists of the carrier, the upper sideband and the lower side.</li>
+            <li>This is used in mobile communications such as police wireless, ambulances, taxicabs,.</li>
+        </ol>
+    </p>
+    <h3>Wideband FM</h3>
+    <p>
+        Following are the features of Wideband FM.
+        <ol>
+            <li>This frequency modulation has infinite bandwidth.</li>
+            <li>The modulation index &beta; is large, i.e., higher than 1.</li>
+            <li>Its spectrum consists of a carrier and infinite number of sidebands, which are located around it.</li>
+            <li>This is used in entertainment, broadcasting applications such as FM radio, TV, etc.</li>
+        </ol>
+    </p>
+
+    </section>
+    <script src="../../static/main.js"></script>
+</body>
+</html>
